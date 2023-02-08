@@ -1,0 +1,33 @@
+{
+  "name": "gardeners-exchange-node",
+  "version": "1.0.0",
+  "description": "Rebuilding a school project in Node",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./bin/www",
+    "lint": "eslint **/*.js --fix",
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noahffiliation/Gardeners-Exchange-Node.git"
+  },
+  "author": "Noah Lindsey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Noahffiliation/Gardeners-Exchange-Node/issues"
+  },
+  "homepage": "https://github.com/Noahffiliation/Gardeners-Exchange-Node#readme",
+  "dependencies": {
+	"cookie-parser": "^1.4.6",
+	"express": "^4.18.2",
+	"http-errors": "^2.0.0",
+	"jade": "^1.11.0",
+	"morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "nodemon": "^2.0.20"
+  }
+}
