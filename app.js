@@ -6,6 +6,7 @@ const csrf = require('csurf');
 var logger = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var accountsRouter = require('./routes/accounts');
@@ -13,6 +14,13 @@ var feedRouter = require('./routes/feed');
 var listingsRouter = require('./routes/listings');
 
 var app = express();
+
+const mongoose = require('mongoose');
+const mongodb = process.env.MONGO_URI;
+mongoose.connect(mongodb, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.set('strictQuery', true);
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
