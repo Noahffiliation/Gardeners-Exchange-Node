@@ -3,7 +3,7 @@ var router = express.Router();
 const rateLimit = require('express-rate-limit');
 
 router.get('/', rateLimit(), (req, res) =>{
-	res.render('feed');
+	res.render('index');
 });
 
 router.get('/login', (req, res) => {

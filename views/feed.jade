@@ -3,3 +3,40 @@ extends base
 block content
   div(class='row justify-content-md-center')
     h1 Listing Feed
+
+  div(class='row', style='padding-top: 3%')
+    each listing in feedItems
+      div(class='col-md-3')
+        div(style='padding: 5%')
+          button(type='button', class='btn btn-light listing', data-toggle='modal', style='width:100%')
+            img(src='https://source.unsplash.com/user/jampatcon/1000x1000', width='100%')
+            br
+            div(class='listing-title') #{listing.name}
+            div(class='listing-info') #{listing.price}/#{listing.unit}
+            div(class='listing-info') #{listing.timePosted}
+        div.listing.id(class='modal fade')
+          div(class='modal-dialog-centered modal-lg modal-dialog')
+            div(class='modal-content')
+              div(class='modal-body')
+                div(class='row')
+                  div(class='container-fluid d-flex justify-content-end align-items-start')
+                    button(type='button', class='close', data-dismiss='modal')&times;
+                  div(class='col-md-5')
+                    img(src='https://source.unsplash.com/user/jampatcon/1000x1000', width='100%')
+                  div(class='col-md-7 ml-auto')
+                    div(class='row', style='padding-bottom: 20px')
+                      div(class='col-med-12')
+                        h1 #{listing.name}
+                    div(class='row')
+                      h3 Quanity: #{listing.quantity} #{listing.unit}
+                    div(class='row')
+                      h3 Price: #{listing.price}/#{listing.unit}
+                    div(class='row')
+                      h3 Description: #{listing.description}
+                    div(class='row')
+                      h3 Posted by:
+                      a(href='/#{listing.accountEmail}') #{listing.accountEmail}
+                  div(class='container-fluid d-flex justify-content-end align-items-end')
+                    div(style='width:40%')
+    else
+      div No Feed
