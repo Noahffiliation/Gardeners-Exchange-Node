@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ListingSchema = new Schema({
 	name: { type: String, required: true },
 	price: { type: Number, required: true },
-	accountEmail: { type: Schema.Types.ObjectId, ref: 'Account', required: true },
+	accountEmail: { type: String, required: true },
 	expired: { type: Boolean, default: false, required: true },
 	quantity: { type: Number },
 	unit: { type: String },

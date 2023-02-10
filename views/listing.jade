@@ -1,0 +1,21 @@
+extends base
+
+block content
+  div(class='container-fluid d-flex justify-content-center align-items-start')
+    div(class='col-md-7')
+      img(src='../images/default.jpg', width='100%')
+      div(class='col-md-7 ml-auto')
+      div(class='row', style='padding-bottom: 20px')
+          div(class='col-med-12')
+          h1 #{listing.name}
+      div(class='row')
+          p Quanity: #{listing.quantity} #{listing.unit}
+      div(class='row')
+          p Price: $#{listing.price}/#{listing.unit}
+      div(class='row')
+          p Description: #{listing.description}
+      div(class='row')
+          p Posted by:
+          a(href='/accounts/#{listing.accountEmail}') #{listing.accountEmail}
+      form
+          button(type='button', class='btn btn-dark', style='background-color: #61892f;', href='/listings/#{listing.id}') Buy!

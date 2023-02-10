@@ -74,10 +74,16 @@ function createAccounts(cb) {
 function createListings(cb) {
 	async.series([
 		function(callback) {
-			listingCreate('Test Listing 1', 100, accounts[0]._id, false, 1, 'unit', 'This is a test listing.', new Date(), 'test.jpg', callback);
+			listingCreate('Test Listing 1', 100, accounts[0].email, false, 1, 'unit', 'This is a test listing.', new Date(), '', callback);
 		},
 		function(callback) {
-			listingCreate('Test Listing 2', 100, accounts[1]._id, false, 1, 'unit', 'This is a test listing.', new Date(), 'test.jpg', callback);
+			listingCreate('Test Listing 2', 100, accounts[1].email, false, 1, 'unit', 'This is a test listing.', new Date(), '', callback);
+		},
+		function(callback) {
+			listingCreate('Test Listing 3', 100, accounts[2].email, false, 1, 'unit', 'This is a test listing.', new Date(), '', callback);
+		},
+		function(callback) {
+			listingCreate('Test Listing 4', 100, accounts[0].email, false, 1, 'unit', 'This is a test listing.', new Date(), '', callback);
 		}
 	], cb);
 }
@@ -87,7 +93,7 @@ async.series([
 	createListings
 ], (err, results) => {
 	if (err) {
-		return console.log(err);
+		return console.error(err);
 	} else {
 		console.log(results);
 	}

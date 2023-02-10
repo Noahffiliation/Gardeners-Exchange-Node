@@ -3,18 +3,15 @@ html
   head
     meta[charset='utf-8']
     meta[name='viewport']
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js')
 
   body
     nav(class='navbar navbar-expand-md navbar-light justify-content-center')
-      a(class='navbar-brand', href='/') Gardener's Exchange
+      a(class='navbar-brand', style='color: #CCCCCC', href='/') Gardener's Exchange
       button(class='navbar-toggler ml-1', type='button', data-toggle='collapse', data-target='.navbar-collapse2')
         span(class='navbar-toggler-icon')
-      div.navbar-collapse2(class='navbar-collapse collapse justify-content-between align-items-center w-100')
+      div(class='navbar-collapse collapse justify-content-between align-items-center w-100')
         ul
         ul(class='navbar-nav navbar-right')
           li(class='nav-item')
@@ -24,9 +21,9 @@ html
           li(class='nav-item')
             a(class='nav-link', href='/login') Login
 
-    div.container
-      div.content(class='container shadow-lg bg-white')
-        div.page
+    div
+      div(class='container shadow-lg bg-white')
+        div
           block content
       footer.footer(style='padding-top: 40px')
         div(class='container footer')
